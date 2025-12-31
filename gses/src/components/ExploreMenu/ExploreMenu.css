@@ -1,0 +1,53 @@
+.explore-menu{
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    font-size: 16px;
+    text-align: center;
+    display: flex;
+    padding: 0 30px;
+    scroll-behavior: smooth;
+    overflow-x: scroll;
+    &::-webkit-scrollbar{
+        display: none;
+    }
+}
+h2{
+    text-align: center;
+    font-size: 30px;
+    color: #333;
+    margin: 20px;
+}
+.explore-menu .menu-list{
+    align-items: center;
+    cursor: pointer;
+    width: min-content;
+    gap: 20px;
+    margin: 20px 40px;
+}
+.menu-list img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    transition: all 0.3s linear;
+    &:hover{
+        padding: 10px;
+        outline: 2px solid deepskyblue;
+        background-color: rgba(0,0,0,0.1);
+        z-index: 1;
+    }
+}
+.explore-menu .arrow1, .arrow2{
+    font-size: 30px;
+    color: #444;
+    margin-top: -10px;
+    background-color: rgba(0,0,0,0.1);
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.explore-menu .arrow1{
+    position: absolute;
+    float: left;
+    left: 20px;
+}
