@@ -1,6 +1,6 @@
 # GSES
 
-A concise one-line project description goes here. Replace this with a short summary of what GSES does and who it's for.
+Your go-to platform for reliable electronic devices, fast, affordable, and efficient services to keep your gadgets running smoothly. Explore our site to book a service or learn more. Trust us to order from us!
 
 Badges
 - Build / CI: ![CI](https://img.shields.io/badge/ci-pending-lightgrey)
@@ -11,7 +11,6 @@ Table of Contents
 - [About](#about)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
-- [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Configuration](#configuration)
 - [Quick Start](#quick-start)
@@ -25,8 +24,7 @@ Table of Contents
 - [Contact](#contact)
 
 ## About
-Explain the goal and scope of GSES in 2–4 sentences. Describe the primary problem it solves and the intended audience (e.g., developers, data scientists, end users).
-
+Your go-to platform for reliable electronic devices, fast, affordable, and efficient services to keep your gadgets running smoothly. Explore our site to book a service or learn more. Trust us to order from us!
 ## Features
 - Feature 1 — short description
 - Feature 2 — short description
@@ -34,20 +32,13 @@ Explain the goal and scope of GSES in 2–4 sentences. Describe the primary prob
 
 ## Tech Stack
 List the main languages, frameworks, and important libraries. Example:
-- Language: (e.g., Python / TypeScript / Go)
-- Frameworks: (e.g., FastAPI, React, Express)
+- Language: (e.g. Node.js, TypeScript)
+- Frameworks: (e.g. React, Express)
 - Data storage: (e.g., PostgreSQL, Redis)
 - CI: (e.g., GitHub Actions)
 - License: (e.g., MIT)
 
 > Tip: Replace the placeholders above with the actual stack used by this repository.
-
-## Prerequisites
-List required tools and versions. Example:
-- Git >= 2.25
-- Node.js >= 16 (if applicable)
-- Python 3.9+ (if applicable)
-- Docker (optional, for containerized runs)
 
 ## Installation
 Step-by-step setup. Provide separate subsections for different environments (local, Docker, Windows/macOS/Linux) if needed.
@@ -62,19 +53,10 @@ npm install
 npm run build
 ```
 
-### Local (example for Python)
-```bash
-git clone https://github.com/j-deku/GSES.git
-cd GSES
-python -m venv .venv
-source .venv/bin/activate   # on Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-```
-
 ### Docker (optional)
 ```bash
 docker build -t gses:latest .
-docker run -p 8080:8080 gses:latest
+docker run -p 3000:3000 gses:latest
 ```
 
 ## Configuration
@@ -98,7 +80,7 @@ Example:
 npm start
 
 # visit
-http://localhost:8080
+http://localhost:3000
 ```
 
 ## Usage Examples
@@ -106,17 +88,9 @@ Show typical usage with examples, endpoints, CLI commands, or code snippets.
 
 Example HTTP request:
 ```bash
-curl -X POST http://localhost:8080/api/v1/do-something \
+curl -X POST http://localhost:3000/api/v1/signin \
   -H "Content-Type: application/json" \
   -d '{"key":"value"}'
-```
-
-Example library usage (if the repo is a package):
-```python
-from gses import SomeClient
-
-client = SomeClient(api_key="...")
-client.do_work()
 ```
 
 ## Development
@@ -145,13 +119,9 @@ npm test
 # coverage
 npm run coverage
 ```
-For Python:
-```bash
-pytest tests/ -q
-```
 
 ## Deployment
-Basic instructions on how to deploy or build production artifacts. Include CI/CD info if available.
+About to deploy the frontend on vercel
 
 ## Contributing
 Short guiding rules for contributors:
@@ -159,8 +129,6 @@ Short guiding rules for contributors:
 - Create a fork and a feature branch for pull requests.
 - Follow the repository's coding style and run tests locally.
 - Add tests for new features and bug fixes.
-
-Link to a CONTRIBUTING.md if you have one.
 
 ## Code of Conduct
 This project follows a Code of Conduct. By participating you agree to abide by its terms. Link to CODE_OF_CONDUCT.md if present.
@@ -174,11 +142,7 @@ Credit libraries, resources, and contributors.
 
 ## Contact
 Maintainer: j-deku  
-Email: replace-with-email@example.com (optional)  
+Email: jdeku573@gmail.com (optional)  
 Project URL: https://github.com/j-deku/GSES
 
 ---
-
-Changelog and roadmap:
-- Keep a CHANGELOG.md for notable changes and releases.
-- Keep a ROADMAP.md for planned features and long-term goals.
