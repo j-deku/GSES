@@ -1,0 +1,146 @@
+.forms-page-wrapper {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('/images/lighting6.jpg') center/cover; /* The plant background */
+  overflow: hidden;
+  z-index: 10000;
+}
+
+.auth-card {
+  display: flex;
+  width: 900px;
+  height: 600px;
+  border-radius: 16px !important;
+  overflow: hidden;
+}
+
+.auth-left-panel {
+  flex: 1;
+  background: linear-gradient(135deg, #4B0F1C 0%, #4B0F1C 100%);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  background: linear-gradient(to bottom, #D4AF37, #D4AF37);
+  color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.brand-name {
+  font-weight: 800 !important;
+  color: #D4AF37;
+  letter-spacing: 1px;
+}
+
+.illustration-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.welcome-text {
+  font-weight: 700 !important;
+  color: #fff;
+  margin-bottom: 20px !important;
+}
+
+.auth-svg {
+  max-width: 250px;
+  margin: 20px 0;
+}
+
+.description-text {
+  color: #dddd;
+  max-width: 280px;
+}
+
+.auth-right-panel {
+  flex: 1;
+  padding: 40px;
+  background: #ffffff;
+}
+
+.auth-tabs {
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 30px;
+}
+
+.auth-tabs .MuiTab-root {
+  text-transform: none;
+  font-weight: 600;
+  color: #9ca3af;
+}
+
+.auth-tabs .Mui-selected {
+  color: #1e3a8a !important;
+}
+
+.form-title {
+  font-weight: 700 !important;
+  color: #111827;
+}
+
+.form-subtitle {
+  color: #6b7280;
+  margin-bottom: 24px !important;
+}
+
+.input-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 4px;
+}
+
+.forgot-link {
+  color: #1e3a8a;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.submit-btn {
+  background-color: #4B0F1C !important;
+  padding: 12px !important;
+  border-radius: 8px !important;
+  margin-top: 24px !important;
+  text-transform: none !important;
+  font-size: 1rem !important;
+}
+
+.footer-text {
+  text-align: center;
+  color: #6b7280;
+}
+
+.register-link {
+  color: #1e3a8a;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@media (max-width:768px){
+    .auth-left-panel{
+        display: none;
+    }
+}

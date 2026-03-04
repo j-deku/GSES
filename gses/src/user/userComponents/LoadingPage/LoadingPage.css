@@ -1,0 +1,68 @@
+.loadingPage{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    background-color:rgb(238, 238, 204);
+    color: rgb(24, 23, 23);
+}
+.loadingPage h1{
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    animation:loadHead 2s ease-out;
+    color:rgb(78, 77, 77);
+    font-style: italic;
+    transition: all 0.3s;
+    text-shadow: 2px 0px 3px gray
+}
+.loadingPage .loading-logo{
+    animation: loadImage 1.5s infinite;
+    margin-bottom: 10px;
+}
+.loading-text {
+    margin-top: 0px;
+    animation: loadText 1s infinite;
+}
+.footer-details{
+    margin-top: 150px;
+    font-size: max(1vw,12px);
+    color: #605f5f;
+    margin-bottom: -150px;
+}
+.footer-details img{
+    position: relative;
+    width: max(2vw, 30px);
+    animation: none;
+    margin: 0;
+}
+@keyframes loadHead {
+        0%{
+          opacity: 0;
+        }
+        100%{
+          opacity: 1;
+        }
+}
+@keyframes loadText {
+    0%{
+        transform: translateX(-10px);
+    }
+    100%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+}
+@keyframes loadImage {
+    40%{
+        transform: scale(0.8);
+    }
+100%{
+        transform: scale(1);
+    } 
+}
+

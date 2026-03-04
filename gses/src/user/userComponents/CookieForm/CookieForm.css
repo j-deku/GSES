@@ -1,0 +1,61 @@
+.cookie-form{
+    position: fixed;
+    display: flex;
+    background-color: rgb(230, 229, 229);
+    color:rgb(41, 41, 41);
+    padding: 20px 40px;
+    width: 50%;
+    justify-content: center;
+    text-align: start;
+    bottom: 5px;
+    border-radius: 3px;
+    z-index: 10;
+    transition: 1s;
+    opacity: 1;
+    animation: show 5s ease;
+}
+@keyframes show {
+    0%{
+        opacity: 0;
+    }100%{
+        opacity: 1;
+        transition-delay: 2s;
+    }
+}
+.cookie-form p b{
+    font-size: 24px;
+}
+.cookie-form p{
+    font-size: 18px;
+    font-family:Tahoma;
+}
+.cookie-form button{
+    padding: 10px 20px;
+    background-color:#D4AF37;
+;
+    border: none;
+    border-radius: 2px;
+    outline: #4B0F1C;
+    color: white;
+    margin: 20px 10px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.cookie-form button.cancel{
+    background-color:white;
+    color: black;
+    border: 1px solid#4B0F1C;
+}
+.cookie-form a{
+    color:rgb(18, 157, 203);
+    text-decoration: underline;
+}
+
+@media (max-width:750px) {
+    .cookie-form{
+        width: 85%;
+    }
+    .cookie-form p{
+        font-size: 18px;
+    }
+}

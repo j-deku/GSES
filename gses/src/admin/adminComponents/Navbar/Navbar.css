@@ -1,0 +1,76 @@
+.navbar{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 5px 4%;
+}
+.navbar .logo{
+    width: max(6%,60px);
+    cursor: pointer;
+}
+.navbar .profile{
+    width: 50px;
+    height:50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.5s;
+    &:hover{
+        filter: drop-shadow(0 0 2em #ccc);
+    }
+}
+.navbar .drop{
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 70px;
+    background-color: rgb(39, 134, 165);
+    color: white;
+    padding: 20px 30px;
+    border: 1px solid whitesmoke;
+    outline: 1px solid rgb(182, 182, 182);
+    border-radius: 5px;
+    text-align: start;
+    align-items: start;
+    box-shadow: 0 0 10px gray;
+    animation: opacity 0.5s ease-in-out;
+}
+@keyframes opacity {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.badge{
+    position: absolute;
+    width: max-content;
+    height: max-content;
+    top: 10px;
+    padding: 1px 2px;
+    text-align: center;
+    background-color: tomato;
+    cursor: pointer;
+    border-radius: 50%;
+    color: white;
+}
+.drop li{
+    list-style: none;
+    margin: 10px;
+
+    & a{
+        text-decoration: none;
+        color: white;
+        font-family: 'Poppins',sans-serif;
+        font-weight: bold;
+        padding: 10px;
+        &:hover{
+            color: tomato;
+        }
+    }
+}
+hr{
+    width: 100%;
+    border: inset;
+    background-color: #ccc;
+}

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:3000/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./Design Decor_files/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer"  ="">
+        <link rel="preconnect" href="https://cdn.cookielaw.org/">
+        <script src="./Design Decor_files/bootstrap.bundle.min.js.download" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="./Design Decor_files/style1.css" media="screen">
+        <title>Design Decor</title>
+        <link rel="icon" type="image/ico" href="http://localhost:3000/favicon.ico">
+    </head>
+
+    <body>
+        <header>
+            <div id="mobileSize" class="toggle-button">
+                <span></span>
+                <span></span>
+                <span></span> 
+             </div>
+           
+            <h1 class="head">CHRISTIANA DESIGN</h1>
+
+            <select onchange="window.location.href=this.value" name="dashboard" id="dashboard" title="option">
+               <option value="/dashboard.html" selected="">Dashboard</option>
+               <option value="/equipments.html">Equipments</option>
+               <option value="/tools.html">Tools</option>
+               <option value="/Apparatus.html">Apparatus</option>
+               <option value="/materials.html">Materials</option>
+            </select>
+
+           <select onchange="window.location.href=this.value" name="home" id="home" title="option">
+               <option value="/homepage" selected="">Home</option>
+               <option value="/gadget.html">Gadgets</option>
+               <option value="/designs.html">Design</option>
+               <option value="/fabrics.html">Fabrics</option>
+               <option value="/places.html">Places</option>
+               <option value="/cart.html">Cart</option>
+           </select>
+
+           <nav>
+               <a href="http://localhost:3000/#ABOUT">About</a>
+               <a href="http://localhost:3000/#US">Contact</a>
+               <a href="http://localhost:3000/#Community">Community</a>
+           </nav>
+    
+            <button type="button" class="signIn" title="signIn">SignIn</button>
+        </header> 
+        <nav class="headSection">
+            <label for="search">Search</label>
+            <input type="search" name="search" id="search" class="search-input" placeholder="search ...." title="Search" width="50px" height="20px"><button type="button" title="SearchButton">Search</button>
+            <a href="http://localhost:3000/#ABOUT">About</a>
+            <a href="http://localhost:3000/#US">Contact</a>
+            <a href="http://localhost:3000/#Community">Community</a>
+        </nav>
+
+        <p class="heading">CHRISTIANA DESIGN is a new platform model created to assist any decorator in his or her career job opportunities and to help them learn more skills related to Decoration Designs and materials.</p>
+    <main><br><hr>
+        <section>
+            <h1 class="content">Christiana Design Platform Base Model <br> Online Retail</h1>
+            <div class="platformHead">
+                <p>Christian Design <br> Platform Model</p><br>
+                <em class="emText">Our first Online Platform. <br> Join us here and read our news feed</em>
+                <img id="Image" src="./Design Decor_files/969c4c5f0a0b40b0b63420f5d1389a38.jpeg" alt="Decoration picture" width="40%" height="430vw">
+                <div class="arrow-button-container">
+                    <button type="button" class="arrow-button" title="Go to News Feed">Go to News Feed</button>
+                  </div>
+            </div>
+
+            <div class="materials-page">
+                <div class="materials1">
+                    <p>Materials</p>
+                </div>
+                <div class="materials2">
+                    <p>Tools</p>
+                </div>
+                <div class="materials3">
+                    <p>Cloths</p>
+                </div>
+            </div>
+        </section>
+        
+        <h2 id="ABOUT">ABOUT US</h2>
+        <article>
+        <div class="contents">
+            <p>
+                Welcome to <b>Christian Design</b> – Where Dreams Take Flight in Color and Bloom!
+
+At Christian Design, we don't just decorate events; we transform spaces into enchanting realms of joy and beauty. As passionate balloon and floral decorators, we believe in the power of color, creativity, and attention to detail to elevate every occasion.
+
+Our journey began with a love for bringing smiles to faces and creating memorable experiences. With years of expertise in the art of balloon sculpting and floral design, we've mastered the delicate balance between elegance and playfulness. From intimate gatherings to grand celebrations, we infuse every event with a touch of our distinctive magic.
+
+Why Choose Us:
+
+Creativity Unleashed: Our designs are more than just decorations; they are expressions of artistry. We thrive on pushing the boundaries of imagination to deliver unique and visually stunning creations.
+
+Passionate Craftsmanship: Every balloon arrangement and floral display is meticulously crafted with love and precision. Our commitment to quality ensures that your event is adorned with the finest details.
+
+Tailored to You: We understand that each event is as unique as the individuals it celebrates. That's why we collaborate closely with our clients to tailor our designs to their preferences, themes, and dreams.
+
+Professional Excellence: Behind the whimsical designs is a team of dedicated professionals who are not just decorators but storytellers. We take pride in delivering seamless experiences and exceeding expectations.
+
+As your go-to balloon and floral decorators, we look forward to turning your visions into reality. Let us be a part of your special moments, adding a burst of color and a touch of nature to create memories that last a lifetime.
+
+Join us at <b>Christian Design</b> – Where Imagination Meets Celebration!
+            </p>
+        </div></article>
+        
+        <aside>
+            <div class="aside-container">
+                <p>Send Us a message here</p>
+                <form action="http://localhost:3000/" class="messageUs">
+                <label for="text">Send Message</label>
+                <input type="text" name="text" id="text" placeholder="Send message ...">
+                <button type="button" onclick="sendMessage()">Send Message</button>
+            </form>
+            </div>
+        </aside>
+            <p>
+                </p><div id="overlay" style="display: none;"></div>
+                <div class="container" id="container" style="display: none;">
+                    <h2><u>SignIn Form</u></h2><br>
+                    <button type="button" class="closeButton" onclick="closeContainer()">X</button>
+                    <form action="http://localhost:3000/" method="get"><br>
+                        <label for="name">Name</label><br>
+                        <input type="text" id="name" name="name" placeholder="your name" spellcheck="true" aria-haspopup="dialog" aria-autocomplete="both" autofocus="" required=""><br><br>
+                        <label for="email">Email</label><br>
+                        <input type="email" name="username" id="email" placeholder="Your email address" spellcheck="true" autocomplete="on" autofocus="" required=""><br><br>
+                        <label for="pass">Password</label><br>
+                        <input type="password" id="pass" name="password" placeholder="******** " spellcheck="true" maxlength="8" autocomplete="on" autofocus="" required=""><br><br><br>
+                        <p align="left" style="margin-left: 30px;">Forgot Password? <a class="signLink" href="http://localhost:3000/verification.html">Reset password</a></p><hr><br>
+                        <cite>By clicking on the<a class="signLink" href="http://localhost:3000/">signIn</a> button, you agree to our terms and conditions.</cite>
+                        <button type="submit" class="signInBtn">Sign In</button><br>
+                        <p>Don't have an account yet?<a class="link" href="http://localhost:3000/signUp.html">SignUp</a><br></p><hr class="hr">
+                    </form>
+            </div>
+            <p></p>
+        <br><br><hr> 
+        <h2 id="Community">Community Members</h2>
+            <div class="Community">
+                <div id="img">
+                    <img src="./Design Decor_files/Vidash-photo.jpg" width="120px" height="120px" class="img" alt="vida photo" title="Vida">
+                    <p class="imgp">Co-Producer: <i>Vida</i>, the media handler in real world environment</p>
+                    <img src="./Design Decor_files/PhotoRoom-20230406_112623.jpg" width="120px" height="120px" class="img" alt="christiana photo" title="Christiana">
+                    <p class="imgp">Co-Producer: <i>Christian</i>, responsible for the arrangement of the equipments and tools needed the production</p>  
+                    <img src="./Design Decor_files/Jerry-photo.jpg" width="120px" height="120px" class="img" alt="jeremiah photo" title="Jeremiah">
+                    <p class="imgp">Co-Editor: <i>Jeremiah</i>, the editor of the online handle platform so reach customers expectations</p>
+                </div>
+                </div>
+            <br>
+        </main>
+
+    <footer>
+        <h2 id="US">CONTACT US</h2>
+
+        <p>For More Enquiries, contact us on:</p>
+        <p>
+            </p><ul>
+                <li>CO-EDITOR: <a href="tel:+233544684595">+233544684595</a></li>
+                <li>Co-EXECUTIVE:<a href="tel:+233548769592">+233548769592</a></li>
+                <li>Co-PRODUCER:<a href="tel: +233245626709">+233245626709</a></li>
+            </ul>
+        <small><hr class="hr">  OR Via  <hr class="hr"></small><br><br>
+        <p>
+            <a class="link1" href="https://wa.me/+233544684595?text=Hey!%20Wassup%20Boss%3F" title="whatsApp"><i class="fab fa-whatsapp fa-2x fa-fw"></i></a>
+            <a class="link2" href="https://www.facebook.com/profile.php?id=100080034630940" title="facebook"><i class="fab fa-facebook-f fa-2x fa-fw"></i></a>
+            <a class="link3" href="https://www.linkedin.com/in/jeremiah-deku-jdek/" title="linkedin"><i class="fab fa-linkedin fa-2x fa-fw"></i></a>
+            <a class="link4" href="https://www.instagram.com/jeremy_dek?igsh=YWo2NXA4ODk5YTdk" title="instagram"><i class="fab fa-instagram fa-2x fa-fw"></i></a>
+    
+        </p>
+    <p></p>
+       <div class="lastHead"><p>Christiana Designing platform is dedicated to NGO company.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright ©2024 Design All rights Reserve</p></div>
+    </footer>
+    
+
+    <script src="./Design Decor_files/script1.js.download" defer=""></script>
+    <script src="./Design Decor_files/sever.js.download" defer=""></script>
+
+    </body></html>

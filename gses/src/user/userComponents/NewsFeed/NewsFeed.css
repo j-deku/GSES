@@ -1,0 +1,31 @@
+.newsFeed{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    place-items: center;
+    margin:80px auto;
+    padding: 30px 30px;
+    border: 1px solid #ccc;
+    font-size: max(2vw, 24px);
+    border-radius: 5px;
+    margin-top: 200px;
+}
+.newsFeed h1{
+    display: flex;
+    margin-bottom: 20px;
+}
+.newsFeed p{
+    display: flex;
+    width: 60vw;
+}
+
+.newsFeed .image-container img{
+    background-color: deepskyblue;
+    border-radius: 50%;
+    width:30px;
+    cursor: pointer;
+}
+.newsFeed .like{
+    cursor: pointer;
+    margin-bottom: 60px;
+}

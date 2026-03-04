@@ -1,0 +1,11 @@
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 50%;
+    background-color: azure;
+    padding: 20px 30px;
+    color: black;
+    z-index: 1;
+}

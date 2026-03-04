@@ -1,0 +1,33 @@
+.profile-details{
+    margin-top: 150px;
+    display: flex;
+    text-align: center;
+    gap: 10px;
+    align-items: center;
+    justify-content:space-between;
+    border: 1px solid gray;
+    padding: 10px;
+    border-radius: 4px
+}
+table{
+    border: 2px solid gray;
+}
+thead{
+    background-color: #f9f9f9;
+    font-weight: bold;
+    font-size: 14px;
+    color: #505050;
+    border-bottom: 1px solid gray;
+}
+th{
+    text-align: left;
+    padding: 10px;
+}
+td{
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid gray;
+    font-size: 14px;
+    color: #505050;
+    font-weight: bold;    
+}

@@ -1,0 +1,30 @@
+.policy{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    gap: 20px;
+    margin-bottom: 30px;
+    margin-top: 150px;
+    padding: 20px 30px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    font-size: 24px;
+    color: black;
+    text-align: center;
+    letter-spacing: 1.5px;
+}
+.policy u{
+    font-size: 24px;
+    font-style: italic;
+    font-weight: bold;
+    text-decoration-style:dotted;
+    text-decoration-thickness: 2px;
+    transition: text-decoration-color 0.5s;
+    &:hover{
+        text-decoration-color: darkred;
+    }
+}
+p a{
+    color: tomato;
+    font-weight: bold;
+}

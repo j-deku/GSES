@@ -1,0 +1,44 @@
+.why-choose-container{
+    margin: 50px;
+    margin-top: 100px;
+}
+.why-choose-container h1{
+    margin-top:50px;
+    font-size: 30px;
+    color: black;
+    font-weight: 600;
+}
+.why-choose-container p{
+    margin: 20px 0;
+    font-size: 18px;
+    color: black;
+    font-weight:500;
+}
+.why-choose-contents{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.why-choose-card{
+    position:relative;
+    justify-content: space-evenly;
+    width: 250px;
+    height: 250px;
+    margin: 20px;
+    margin-left: 0;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-shadow: 0 0 5px 5px rgb(234, 234, 234);
+}
+.why-choose-card h3{
+    text-align: center;
+    font-size: 18px;
+    padding: 0 5px;
+    padding-top: 15px;
+}
+.why-choose-card p{
+    text-align: left;
+    padding: 10px 20px;
+    color: #333;
+}

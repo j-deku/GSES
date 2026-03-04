@@ -1,0 +1,23 @@
+.aboutUs{
+    justify-content: center;
+    align-items: center;
+    font-family:Tahoma;
+    margin-top: 150px;
+}
+.aboutUs h1{
+    font-size: 36px;
+    font-weight: bold;
+    color: #262626;
+    text-align: center;
+}
+.info{
+    margin: 20px 0;
+    color: #808080;
+    font-size: 16px;
+    line-height: 1.4;
+    text-align: justify;
+    font-family: Tahoma;
+}
+.info a img{
+    width: max(10px,3vw);
+}
