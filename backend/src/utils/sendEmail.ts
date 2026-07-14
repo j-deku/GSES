@@ -9,6 +9,11 @@ export const sendEmail = async (
   htmlContent: string
 ): Promise<void> => {
   try {
+    console.log({
+  service: process.env.SMTP_SERVICE,
+  host: process.env.SMTP_HOST,
+  port: process.env.SMTP_PORT,
+});
     const transporter = nodemailer.createTransport({
       service: process.env.SMTP_SERVICE,
       port: Number(process.env.SMTP_PORT), // ensure port is a number

@@ -35,7 +35,7 @@ const addDesign = async (req: Request, res: Response): Promise<void> => {
 //all design list
 const listDesign = async (req: Request, res: Response) => {
     try {
-        const designs = await DesignModel.find({});
+        const designs = await DesignModel.find({}).lean();
         res.json({ success: true, data: designs })
     } catch (error) {
         console.log(error);

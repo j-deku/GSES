@@ -34,7 +34,7 @@ export const ProductProvider = ({ children }) => {
       if (document.visibilityState === "visible") {
         getProduct();
       }
-    }, 5000);
+    }, 10000);
     return () => clearInterval(interval);
   }, []);
 
@@ -62,7 +62,7 @@ export const ProductProvider = ({ children }) => {
         url,
       }}
     >
-      {children}
+      {loading ? null : children}
     </ProductContext.Provider>
   );
 };

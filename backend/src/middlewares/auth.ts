@@ -1,20 +1,31 @@
 import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
+import User from "../models/UserModel";
 
-const authMiddleware = (req: Request, res: Response, next: NextFunction) => {
+const authMiddleware = async (req: Request, res: Response, next: NextFunction)=> {
   try {
     const token = req.cookies.usATK;
 
     if (!token) {
       res.status(401).json({ success: false, message: "Unauthorized" });
+      return;
     }
 
     const decoded = jwt.verify(
       token,
       process.env.JWT_SECRET as string
-    ) as { id: string };
+    ) as { id: string, role: string};
 
-    req.body.userId = decoded.id;
+    const user = await User.findById(decoded.id);
+    if (!user) {
+      res.status(401).json({
+          success:false
+      });
+      return ;
+  }
+
+    req.body.userId = user._id;
+    req.body.role = user.role;
 
     next();
   } catch (error) {

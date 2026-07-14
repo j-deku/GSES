@@ -17,8 +17,8 @@ import User from "../models/UserModel";
 const JWT_SECRET = process.env.JWT_SECRET;
 if (!JWT_SECRET) throw new Error("JWT_SECRET is not defined");
 
-export const createAccessToken = (id: string) => {
-  return jwt.sign({ id }, process.env.JWT_SECRET as string, {
+export const createAccessToken = (id: string, role: string) => {
+  return jwt.sign({ id, role }, process.env.JWT_SECRET as string, {
     expiresIn: "15m",
   });
 };
@@ -129,7 +129,7 @@ const verifyOTP = async (req:Request, res:Response): Promise<void> => {
       const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:5173"; 
       const redirectUrl = `${FRONTEND_URL}/?name=${encodeURIComponent(user.name)}&email=${encodeURIComponent(user.email)}`;
 
-      const newToken = createAccessToken(user._id.toString());
+      const newToken = createAccessToken(user._id.toString(), user.role);
       setAppCookie(res, "usATK", newToken, {
         path:"/",
         maxAge:24 * 60 * 60 * 1000,
@@ -166,7 +166,7 @@ const resendOTP = async (req:Request, res:Response): Promise<void> => {
     }    
 
     const otp = generateOTP();
-    const token = createAccessToken(user._id.toString());
+    const token = createAccessToken(user._id.toString(), user.role);
     const verificationUrl = `${process.env.FRONTEND_URL}/verify-otp?token=${token}`;
     const expiresAt = new Date(Date.now() + 30 * 60 * 1000); // 30 minutes
 
@@ -204,13 +204,6 @@ const loginUser = async (req:Request, res:Response): Promise<void> => {
       });
       return;
     }
-    if(user.role!=="user") {
-      res.json({
-        success: false,
-        message: "You are not authorized to access this resource. \n Please login with a user account.",
-      });
-      return;
-    }
 
     if (!user.verified) {
       res.json({
@@ -229,7 +222,7 @@ const loginUser = async (req:Request, res:Response): Promise<void> => {
       return;
     }
 
-    const AccessToken = createAccessToken(user._id.toString());
+    const AccessToken = createAccessToken(user._id.toString(), user.role);
     const refreshToken = createRefreshToken(user._id.toString());
     await sendEmail(email, "Welcome Back", EmailWelcome(user.name));
     
@@ -250,6 +243,7 @@ const loginUser = async (req:Request, res:Response): Promise<void> => {
         id: user._id,
         name: user.name,
         email: user.email,
+        role: user.role,
       },
     });
   } catch (error) {
@@ -382,7 +376,20 @@ const refreshToken = async (req: Request, res: Response):Promise<void> => {
       process.env.JWT_REFRESH_SECRET as string
     ) as { id: string, role: string };
 
-    const accessToken = createAccessToken(decoded.id);
+    const user = await User.findById(decoded.id);
+
+if (!user) {
+  res.status(401).json({
+    success: false,
+    message: "User not found",
+  });
+  return;
+}
+
+  const accessToken = createAccessToken(
+    user._id.toString(),
+    user.role
+  );
 
     setAppCookie(res, "usATK", accessToken, {
       path: "/",

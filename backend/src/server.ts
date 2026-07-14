@@ -1,29 +1,30 @@
+import dns from "dns";
+
+dns.setServers([
+  "8.8.8.8",
+  "1.1.1.1"
+]);
+
+
 import express, { Request, Response, NextFunction } from "express";
 import corsMiddleware from "./middlewares/cors";
 import { connectDB } from "./config/Db";
-import designRouter from "./routes/DesignRoute";
-import userRouter from "./routes/UserRoute";
-import adminRouter from "./routes/AdminRoute";
 import limiter from "./middlewares/rateLimiter";
+import dotenv from "dotenv";
+dotenv.config();
 import "dotenv/config";
-import cartRouter from "./routes/CartRoute";
-import orderRouter from "./routes/OrderRoute";
-import authMiddleware from "./middlewares/auth";
 import securityMiddleware from "./middlewares/security";
 import logger from "./middlewares/logger";
-import errorHandler from "./middlewares/errorHandler";
-import permissionRouter from "./routes/PermissionRoute";
 import session from "express-session";
 import cookieParser from "cookie-parser";
 import "./config/passport";
 import passport from "passport";
-import BotRouter from "./routes/BotRoute";
 import path from "path";
+import apiRouter from "./apis/apiRouter";
+import designRouter from "./routes/DesignRoute";
 
 const app = express();
 const port = process.env.PORT || 5000;
-
-connectDB();
 
 app.use(corsMiddleware);
 app.options("*", corsMiddleware);
@@ -56,24 +57,15 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 
 app.use(securityMiddleware);
 
-// Rate Limiter
-app.use(limiter);
+connectDB();
 
 app.use("/images", express.static(path.join(__dirname, "../uploads")));
 
-app.use("/api/user", userRouter);
-app.use("/api/admin", adminRouter);
-
 app.use("/api/design", designRouter);
-app.use("/api/cart", cartRouter);
-app.use("/api/order", orderRouter);
-app.use("/api/permission", permissionRouter);
 
-app.use("/api/chat", BotRouter);
-
-app.use("/api/protected", authMiddleware, (req, res) => {
-  res.send("Hello, authenticated user!");
-});
+// Rate Limiter
+app.use(limiter);
+app.use('/api', apiRouter);
 
 app.get("/", (req: Request, res: Response) => {
   res.sendFile(path.join(__dirname, "/public/index.html"));
@@ -97,6 +89,6 @@ app.use((err: any, req: Request, res: Response, next: NextFunction) => {
   });
 });
 
-app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
-});
+  app.listen(port, () => {
+    console.log(`Server running on http://localhost:${port}`);
+  });

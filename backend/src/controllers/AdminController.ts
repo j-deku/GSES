@@ -341,43 +341,35 @@ const refreshToken = async (req: Request, res: Response):Promise<void> => {
 };
 
 const logout = (req: Request, res: Response) => {
+  const admin = req.cookies.AdATK;
+  if(admin){
   res.clearCookie("AdATK");
   res.clearCookie("AdRTK");
-
+}
   res.json({
     success: true,
     message: "Logged out",
+    redirect: "/admin/"
   });
 };
 
-const protectAdminPanel = (req:Request, res:Response)=>{
-  try {
-      const token = req.cookies.AdRTK || req.cookies.usATK;
- 
-   const decoded = jwt.verify(
-      token,
-      process.env.JWT_REFRESH_SECRET as string
-    ) as { id: string, role: string};
+const protectAdminPanel = (req:Request, res:Response):void => {
+    const userRole = req.body.role;
 
-  if(!token){
-    res.json({
-      success: false,
-      message:"User is authenticated"
-    })
-  } 
+    if (userRole !== "admin") {
+        res.status(403).json({
+            success: false,
+            canLogin: false,
+            message: "Only administrators can access this page."
+        });
+        return;
+    }
 
-  if(decoded.role !=="admin" ){
     res.json({
-      sucess: false,
-      message:"Access denied, \n You're not allowed to view this panel."
+        success: true,
+        role: userRole,
+        canLogin: true,
     });
-  }
-  } catch (error) {
-    res.status(500).json({
-      sucess: false,
-      message:"Server is currently down",
-    });
-  }
-}
+};
 
 export { registerAdmin, verifyOTP, resendOTP, loginAdmin, adminProfile, refreshToken, logout, protectAdminPanel, adminRoleCheck};

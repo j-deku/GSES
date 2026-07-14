@@ -4,7 +4,7 @@ export interface IUser extends Document {
   _id: ObjectId;
   name: string;
   email: string;
-  role?: string;
+  role: string;
   password?: string;
   avatar?: string;
   cartData: Record<string, any>;

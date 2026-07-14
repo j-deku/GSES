@@ -42,7 +42,7 @@ export const UserAuthProvider = ({ children }) => {
         logout,
       }}
     >
-      {children}
+      {loading ? null : children}
     </UserAuthContext.Provider>
   );
 };

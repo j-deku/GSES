@@ -1,64 +1,47 @@
 import React, { useEffect, useState } from "react";
-import { useAdminAuth } from "../../admin/context/AdminAuthContext";
 import { Alert, Box, CircularProgress } from "@mui/material";
-import { Outlet } from "@mui/icons-material";
+import { Outlet, Navigate } from "react-router-dom";
 import adminApi from "../../API/adminApi";
 
 const AdminProtectedRoute = () => {
-  const { roleCheck, setRoleCheck } = useAdminAuth();
   const [loading, setLoading] = useState(true);
-  const [message, setMessage] = useState("");
+  const [authenticated, setAuthenticated] = useState(false);
   const [error, setError] = useState("");
-  const adminRoleCheck = async () => {
-    try {
-      const res = await adminApi.get("/api/admin/protect");
-      if (res.data.success) {
-        roleCheck(res.data.success);
-        setMessage(res.data.message);
-      }
-    } catch (error) {
-      setRoleCheck(null);
-      setError(error.message);
-    } finally {
-      setLoading(false);
-    }
-  };
 
   useEffect(() => {
-    adminRoleCheck();
-  });
+    const checkAdminSession = async () => {
+      try {
+        const res = await adminApi.get("/api/admin/me");
 
-  const awaitMessage = () => {
-    setMessage(message);
-  };
-  setTimeout(() => {
-    awaitMessage();
-  }, 5000);
+        if (res.data.success) {
+          setAuthenticated(true);
+        }
+      } catch (err) {
+        setAuthenticated(false);
+        setError(
+          err.response?.data?.message || "Admin authentication required."
+        );
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  return (
-    <Box sx={{ placeSelf: "center", m: 30 }}>
-      {loading ? (
-        <CircularProgress
-          sx={{ width: "400px", height: 10, alignContent: "center" }}
-        >
-          Please wait ...
-        </CircularProgress>
-      ) : (
-        <>
-          {roleCheck === "admin" ? (
-            <>
-              {awaitMessage && <Alert severity="info">{message}</Alert>}
-              <Outlet />
-            </>
-          ) : (
-            <Alert severity="error" sx={{ p: 5 }}>
-              {error}
-            </Alert>
-          )}
-        </>
-      )}
-    </Box>
-  );
+    checkAdminSession();
+  }, []);
+
+  if (loading) {
+    return (
+      <Box sx={{ display: "grid", placeItems: "center", minHeight: "100vh" }}>
+        <CircularProgress />
+      </Box>
+    );
+  }
+
+  if (!authenticated) {
+    return <Navigate to="/admin/auth0" replace state={{ error }} />;
+  }
+
+  return <Outlet />;
 };
 
 export default AdminProtectedRoute;

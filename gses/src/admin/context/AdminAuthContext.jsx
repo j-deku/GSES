@@ -32,7 +32,7 @@ export const AdminAuthProvider = ({ children }) => {
     try {
       const res = await adminApi.get("/api/admin/protect");
       if (res.data.success) {
-        roleCheck(res.data.success);
+        setRoleCheck(res.data.role);
       }
     } catch {
       setRoleCheck(null);
@@ -40,11 +40,14 @@ export const AdminAuthProvider = ({ children }) => {
   };
   useEffect(() => {
     adminRoleCheck();
-  });
+  },[]);
 
   const logout = async () => {
-    await adminApi.post("/api/admin/logout");
-    setAdmin(null);
+    const res = await adminApi.post("/api/admin/logout");
+      if(res.data.success){
+        setAdmin(null);
+        window.location.href = res.data.redirect;
+      }
   };
 
   return (
@@ -60,7 +63,7 @@ export const AdminAuthProvider = ({ children }) => {
         adminRoleCheck,
       }}
     >
-      {children}
+      {loading ? null : children}
     </AdminAuthContext.Provider>
   );
 };

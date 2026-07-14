@@ -28,9 +28,10 @@ const Navbar = () => {
 
   const navItems = [
     { label: "Home", path: "/" },
-    { label: "Products", path: "products" },
-    { label: "Contacts", path: "#contactUs" },
-    { label: "About", path: "aboutUs" },
+    { label: "Products", path: "/products" },
+    { label: "Contacts", path: "/#contactUs" },
+    { label: "About", path: "/aboutUs" },
+    { label: "Sign In", path: "/auth" },
   ];
 
   const toggleDrawer = (open) => () => setDrawerOpen(open);
@@ -106,7 +107,7 @@ const Navbar = () => {
             </Typography>
           ) : (
             <Button
-              onClick={() => navigate("auth")}
+              onClick={() => navigate("/auth")}
               variant="contained"
               sx={{
                 background: `linear-gradient(180deg, rgba(102,17,13,0.94), rgba(189,92,48,0.94))`,

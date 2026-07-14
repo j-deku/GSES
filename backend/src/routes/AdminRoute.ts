@@ -13,6 +13,7 @@ import {
   verifyOTP,
 } from "../controllers/AdminController";
 import authAdmin from "../middlewares/adminAuth";
+import authMiddleware from "../middlewares/auth";
 
 const AdminRouter = express.Router();
 
@@ -43,16 +44,15 @@ const validateOTP = [
 ];
 
 // Routes
+AdminRouter.get("/protect", authMiddleware, protectAdminPanel);
 AdminRouter.post("/register", validateRegister, registerAdmin);
 AdminRouter.post("/login", validateLogin, loginAdmin);
 AdminRouter.post("/verify-otp", otpLimiter, validateOTP, verifyOTP);
 AdminRouter.post("/resend-otp", otpLimiter, resendOTP);
 AdminRouter.post("/refresh-token", refreshToken);
 
-
 AdminRouter.use(authAdmin);
 AdminRouter.get("/me", adminProfile);
 AdminRouter.post("/logout", logout);
-AdminRouter.get("/protect", protectAdminPanel);
 
 export default AdminRouter;

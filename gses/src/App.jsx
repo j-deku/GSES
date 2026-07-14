@@ -25,6 +25,7 @@ import PasswordReset from "./user/userComponents/PasswordReset/PasswordReset";
 import Forms from "./admin/adminComponents/Forms/Forms";
 import Form from "./user/userComponents/Form/Form";
 import AdminProtectedRoute from "./shared/Guards/AdminProtectedRoute";
+import CanAccessAdminLogin from "./shared/Guards/CanAccessAdminLogin";
 
 const App = ({ setLogin }) => {
   return (
@@ -52,8 +53,8 @@ const App = ({ setLogin }) => {
         </Route>
 
         {/* Admin Routes */}
+        <Route path="/admin/auth0" element={<CanAccessAdminLogin><Forms /></CanAccessAdminLogin>} />
         <Route element={<AdminProtectedRoute />}>
-          <Route path="/admin/auth0" element={<Forms />} />
           <Route path="/admin/*" element={<Admin />}>
             <Route index element={<Add />} />
             <Route path="add" element={<Add />} />

@@ -1,5 +1,7 @@
 import mongoose from "mongoose";
 import logger from "../middlewares/logger";
+import dotenv from "dotenv"
+dotenv.config();
 
 export const connectDB = async() =>{
     try{
@@ -12,7 +14,8 @@ export const connectDB = async() =>{
         console.log("Db connected successfully");
     }catch(error){
         if (error instanceof Error) {
-            logger.error("Db connection failed", error.message);
+            logger.error("Db connection failed", error);
+            console.error("DB Error:", error);
         }
             process.exit(1);
     }

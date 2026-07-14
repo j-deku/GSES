@@ -12,7 +12,7 @@ GadgetCare connects users with reliable electronic device repair and maintenance
 
 ---
 
-## ✨ Features
+## Features
 
 - **Easy Booking** — Schedule a repair or maintenance service in just a few clicks
 - **Fast Turnaround** — Get your gadgets serviced quickly and efficiently
@@ -22,13 +22,13 @@ GadgetCare connects users with reliable electronic device repair and maintenance
 
 ---
 
-## 🖥️ Tech Stack
+## Tech Stack
 
-> _Update this section with the actual technologies used in your project._
+> _The actual technologies used in the project._
 
-- **Frontend:** e.g. React / HTML / CSS / JavaScript
-- **Backend:** e.g. Node.js / Express
-- **Database:** e.g. MongoDB / PostgreSQL
+- **Frontend:** e.g. React / HTML / CSS / JavaScript / MUIs
+- **Backend:** e.g. Node.js / Express / Redis
+- **Database:** e.g. MongoDB / MySQL
 - **Other Tools:** e.g. Git, Docker, etc.
 
 ---
@@ -61,7 +61,7 @@ frontend: npm run dev
 
 ---
 
-## 📌 Usage
+## Usage
 
 1. Visit the site (locally or deployed link)
 2. Browse available services
@@ -70,7 +70,7 @@ frontend: npm run dev
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! To contribute:
 
@@ -82,19 +82,19 @@ Contributions are welcome! To contribute:
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-## 📬 Contact
+## Contact
 
 For questions, feedback, or support, feel free to reach out:
 
 - **Email:** jdeku573@gmail.com.com
-- **Website:** [yourwebsite.com](https://yourwebsite.com)
+- **Website:** [Not Yet Deployed](Not Yet Deployed)
 
 ---
 
-⭐ If you find this project useful, consider giving it a star on GitHub!
+If you find this project useful, consider giving it a star on GitHub!

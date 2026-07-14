@@ -28,7 +28,7 @@ const authAdmin = async (req: Request, res: Response, next: NextFunction):Promis
       });
       return;
     }
-
+    
     next();
   } catch (error) {
     res.status(401).json({
