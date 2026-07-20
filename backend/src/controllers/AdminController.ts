@@ -261,7 +261,7 @@ const adminRoleCheck = async (req:Request, res:Response) =>{
   try {
     const token = req.cookies?.usATK;
     if(!token){
-      res.status(401).json({message:"User not authenticated", success: false});
+      res.status(200).json({message:"User not authenticated", success: false});
     }
 
     const decoded = jwt.verify(
@@ -274,7 +274,7 @@ const adminRoleCheck = async (req:Request, res:Response) =>{
       const accessToken = createAccessToken(decoded.id);
       setAppCookie(res, "AdATK", accessToken); 
     }else{
-      res.status(401).json({message:"User not authorized", success: false});      
+      res.status(200).json({message:"User not authorized", success: false});      
     }
 
   } catch (error) {
@@ -286,7 +286,7 @@ const adminProfile = async (req: Request, res: Response): Promise<void> => {
     const token = req.cookies?.AdATK;
 
     if (!token) {
-      res.status(401).json({
+      res.status(200).json({
         success: false,
         message: "User not authenticated",
       });
@@ -308,14 +308,14 @@ const adminProfile = async (req: Request, res: Response): Promise<void> => {
       return;
     }
 
-    res.json({
+    res.status(200).json({
       success: true,
       message: "User authenticated",
       admin,
     });
 
   } catch (error) {
-    res.status(401).json({
+    res.json({
       success: false,
       message: "Invalid or expired token",
     });
@@ -364,7 +364,7 @@ const protectAdminPanel = (req:Request, res:Response):void => {
     const userRole = req.body.role;
 
     if (userRole !== "admin") {
-        res.status(403).json({
+        res.status(200).json({
             success: false,
             canLogin: false,
             message: "Only administrators can access this page."

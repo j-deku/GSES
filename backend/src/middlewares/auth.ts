@@ -7,7 +7,7 @@ const authMiddleware = async (req: Request, res: Response, next: NextFunction)=>
     const token = req.cookies.usATK;
 
     if (!token) {
-      res.status(401).json({ success: false, message: "Unauthorized Access" });
+      res.status(200).json({ success: false, message: "Unauthorized Access" });
       return;
     }
 
@@ -18,7 +18,7 @@ const authMiddleware = async (req: Request, res: Response, next: NextFunction)=>
 
     const user = await User.findById(decoded.id);
     if (!user) {
-      res.status(401).json({
+      res.status(200).json({
           success:false
       });
       return ;

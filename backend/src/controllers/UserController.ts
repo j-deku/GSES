@@ -272,7 +272,7 @@ const userProfile = async (req: Request, res: Response): Promise<void> => {
     const token = req.cookies?.usATK;
 
     if (!token) {
-      res.status(401).json({
+      res.status(200).json({
         success: false,
         message: "Not authenticated",
       });
@@ -295,14 +295,14 @@ const userProfile = async (req: Request, res: Response): Promise<void> => {
       return;
     }
 
-    res.json({
+    res.status(200).json({
       success: true,
       user,
     });
 
   } catch (error) {
     //console.error(error);
-    res.status(401).json({
+    res.json({
       success: false,
       message: "Invalid or expired token",
     });

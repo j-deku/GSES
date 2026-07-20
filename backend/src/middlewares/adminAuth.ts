@@ -7,7 +7,7 @@ const authAdmin = async (req: Request, res: Response, next: NextFunction):Promis
     const token = req.cookies.AdATK;
 
     if (!token) {
-      res.status(401).json({
+      res.status(200).json({
         success: false,
         message: "Admin not authenticated",
       });
@@ -22,7 +22,7 @@ const authAdmin = async (req: Request, res: Response, next: NextFunction):Promis
     const user = await User.findById(decoded.id);
 
     if (!user || user.role !== "admin") {
-      res.status(403).json({
+      res.status(200).json({
         success: false,
         message: "Access denied",
       });
