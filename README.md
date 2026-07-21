@@ -5,6 +5,11 @@ Your go-to platform for reliable electronic device services — fast, affordable
 Explore our site to book a service or learn more. Trust us to keep your devices in top shape!
 
 ---
+## Dashboard View
+<img width="1347" height="645" alt="image" src="https://github.com/user-attachments/assets/296863a8-1741-4c1a-bc82-42065124ad54" />
+
+
+---
 
 ## Description
 
